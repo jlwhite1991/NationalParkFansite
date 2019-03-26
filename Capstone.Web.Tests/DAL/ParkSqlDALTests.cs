@@ -28,7 +28,7 @@ namespace Capstone.Web.Tests.DAL
 
                 conn.Open();
               
-                cmd = new SqlCommand("INSERT INTO park VALUES ('JNP', 'JellyStone National Park', 'Ohio', 666420, 6969, 300, 42, 'Mushroom', 3000, 1000000, 'There is actually no difference between good things and bad things', 'dril', 'Hellworld: You will die.', 0, 0);", conn);
+                cmd = new SqlCommand("INSERT INTO park VALUES ('JNP', 'JellyStone National Park', 'Ohio', 600000, 3333, 300, 42, 'Mushroom', 3000, 1000000, 'Smarter than the average bear!', 'Yogi', 'Pinic basket capital of the world.', 0, 0);", conn);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -54,7 +54,7 @@ namespace Capstone.Web.Tests.DAL
             ParkSqlDAL parkSqlDAL = new ParkSqlDAL(connectionString);
             Park park = parkSqlDAL.GetPark("JNP");
             Assert.IsNotNull(park);
-            Assert.AreEqual("Hellworld: You will die.", park.Description);
+            Assert.AreEqual("Pinic basket capital of the world.", park.Description);
         }
     }
 
